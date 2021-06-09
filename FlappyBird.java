@@ -113,6 +113,18 @@ g.fillRect(bird.x, bird.y, bird.width, bird.height);
     for(Rectangle column : columns){
         paintColumn(g,column);
     }
+
+    g.setColor(Color.white);
+    g.setFont(new Font("Arial", 1, 100));
+    if(!started){
+        g.drawString("Click to Start!", 275, HEIGHT / 2 -50);
+    }
+    if(gameOver){
+        g.drawString("Game Over!", 300, HEIGHT / 2 -50);
+    }
+    if(!gameOver && started){
+        g.drawString(String.valueOf(score), WIDTH /2, 100);
+    }
 }
 
     public static void main(String[] args) {
