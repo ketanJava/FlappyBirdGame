@@ -63,6 +63,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
         g.fillRect(column.x, column.y, column.width, column.height);
     }
 
+<<<<<<< HEAD
     //jump function on mouse click to make the bird jump:
     public void jump() {
 
@@ -71,6 +72,11 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 
             //creating the new bird and columns to begin a new game:
             bird = new Rectangle(WIDTH / 2 - 10, HEIGHT / 2 - 10, 20, 20);
+=======
+    public void jump(){
+        if(gameOver){
+            bird = new Rectangle(WIDTH /2 -10, HEIGHT / 2 -10, 20, 20);
+>>>>>>> master
             columns.clear();
             yMotion = 0;
             score = 0;
@@ -81,6 +87,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 
             gameOver = false;
         }
+<<<<<<< HEAD
 
         //before the game has started:
         if (!started) {
@@ -99,6 +106,19 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
     }
 
     //action listener function to perform the action:
+=======
+        if(!started){
+            started = true;
+        }
+        else if(!gameOver){
+            if(yMotion > 0){
+                yMotion = 0;
+            }
+            yMotion -=10;
+        }
+    }
+    
+>>>>>>> master
     @Override
     public void actionPerformed(ActionEvent e) {
         int speed = 10;
